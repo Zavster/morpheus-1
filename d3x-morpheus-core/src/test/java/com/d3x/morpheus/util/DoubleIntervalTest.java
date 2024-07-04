@@ -159,6 +159,16 @@ public class DoubleIntervalTest {
         assertEquals(OPEN.getWidth(), 3.0, TOLERANCE);
     }
 
+    @Test public void testPoint() {
+        DoubleInterval interval = DoubleInterval.point(1.0);
+
+        assertFalse(interval.contains(1.0 - SMALL));
+        assertTrue(interval.contains(1.0 - TINY));
+        assertTrue(interval.contains(1.0));
+        assertTrue(interval.contains(1.0 + TINY));
+        assertFalse(interval.contains(1.0 + SMALL));
+    }
+
     @Test public void testEmpty() {
         DoubleInterval interval = DoubleInterval.EMPTY;
 

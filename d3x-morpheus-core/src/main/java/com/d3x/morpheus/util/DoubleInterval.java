@@ -164,6 +164,17 @@ public final class DoubleInterval implements DoublePredicate {
     }
 
     /**
+     * Creates a new interval containing a single point.
+     *
+     * @param point the point contained in the interval.
+     *
+     * @return the new open interval {@code [point, point]}.
+     */
+    public static DoubleInterval point(double point) {
+        return closed(point, point);
+    }
+
+    /**
      * Parses the string representation of an interval.
      *
      * @param str the string representation of an interval, in the
